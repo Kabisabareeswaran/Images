@@ -1,16 +1,14 @@
-{{
-
-    config(
-        materialized = 'table'
-    )
-}}
 
 with customers as  ( 
-    Select * from {{ref('Stg_Jaffle_Customers')}}
+    
+Select * 
+from {{ ref('Stg_Jaffle__Customers')}}
 ),
 
 Orders as (
-    Select * from {{ref('Stg_Jaffle_Orders') }}
+Select * 
+from {{ ref('Stg_Jaffle__Orders') }}
+
 ),
 
 customer_orders as (
